@@ -5,6 +5,11 @@ import requests
 from django.conf import settings
 import re  # Importamos el módulo de expresiones regulares
 
+
+from django.views.decorators.csrf import csrf_protect
+
+
+
 def index(request):
     hidrologicas = {
         'Hidrocaribe': 1,
@@ -30,6 +35,8 @@ def index(request):
         'RECAPTCHA_PUBLIC_KEY': settings.RECAPTCHA_PUBLIC_KEY,
     })
 
+
+@csrf_protect
 def consultar_api(request):
     if request.method == 'POST':
         # Validar reCAPTCHA (si lo estás usando)

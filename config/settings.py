@@ -131,3 +131,4 @@ URL_ENDPOINT_HIDROVEN = 'http://10.10.50.80:8080/geasmobile/rest/centralizado/pa
 RECAPTCHA_PUBLIC_KEY = ''  # Clave del sitio
 RECAPTCHA_PRIVATE_KEY = '' 
 SILENCED_SYSTEM_CHECKS = ['captcha.recaptcha_test_key_error']
+CSRF_TRUSTED_ORIGINS = ['https://hidroweb.hidroven.gob.ve']
