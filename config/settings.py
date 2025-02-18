@@ -9,7 +9,7 @@ SECRET_KEY = '2lmkadn4h70=fd4+sxs^5&ohc1a$lgg4eajeda^dorhebi08d8'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['hidroweb.hidroven.gob.ve', 'localhost', '10.10.50.81', '127.0.0.1']
 
 
 # Application definition
