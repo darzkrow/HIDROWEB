@@ -4,10 +4,10 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '2lmkadn4h70=fd4+sxs^5&ohc1a$lgg4eajeda^dorhebi08d8'
+SECRET_KEY = 'VOG8v(,LgqC!<3a{}@v~%e93o–)&&8MMiD[aXD+=Y=g%f%>'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['hidroweb.hidroven.gob.ve', 'localhost', '10.10.50.81', '127.0.0.1']
 
@@ -21,6 +21,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'consulta_nic',
 ]
 
 MIDDLEWARE = [
@@ -125,3 +126,8 @@ CACHE_TTL = 1200
 
 #url de endpoint para que consulte a la apps
 URL_ENDPOINT_HIDROVEN = 'http://10.10.50.80:8080/geasmobile/rest/centralizado/pago'
+
+
+RECAPTCHA_PUBLIC_KEY = ''  # Clave del sitio
+RECAPTCHA_PRIVATE_KEY = '' 
+SILENCED_SYSTEM_CHECKS = ['captcha.recaptcha_test_key_error']
