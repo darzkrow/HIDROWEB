@@ -1,0 +1,23 @@
+
+    
+{% extends "layouts/base.html" %}
+
+{% block title %} Detalles NIC {% endblock title %}
+{% block content %}
+    
+    
+    <div class="container d-flex justify-content-center align-items-center vh-100">
+        <div class="card shadow-lg p-4" style="width: 100%; max-width: 400px;">
+            <h2 class="card-title text-center mb-4">Detalles de la Consulta</h2>
+            <div class="mb-3">
+                <p><strong>Hidrológica:</strong> {{ datos.HIDROLOGICA }}</p>
+                <p><strong>Contrato:</strong> {{ datos.CONTRATO }}</p>
+                <p><strong>Deuda Actual:</strong> {{ datos.IMPTOTAL }}</p>
+            </div>
+            <div class="d-grid">
+                <a href="{% url 'index' %}" class="btn btn-primary"><i class="fas fa-backward"></i> Volver</a>
+            </div>
+        </div>
+    </div>
+
+    {% endblock content %}

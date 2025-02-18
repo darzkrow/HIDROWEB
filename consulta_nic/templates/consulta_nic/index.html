@@ -1,0 +1,39 @@
+
+{% extends "layouts/base.html" %}
+{% block title %} Consulta NIC {% endblock title %}
+{% block content %}
+
+<div class="container d-flex justify-content-center align-items-center vh-100">
+    <div class="card shadow-lg p-4" style="width: 100%; max-width: 400px;">
+        <h2 class="card-title text-center mb-4">Consulta de NIC</h2>
+        <form action="{% url 'consultar_api' %}" method="POST">
+            {% csrf_token %}
+        <div class="mb-3">
+                <label for="HIDROLOGICA" class="form-label">Hidrológica:</label>
+                <select class="form-select" id="HIDROLOGICA" name="HIDROLOGICA" required>
+                    <option value="">Seleccione una hidrológica</option>
+                    {% for nombre, id in hidrologicas.items %}
+                        <option value="{{ id }}">{{ nombre }}</option>
+                    {% endfor %}
+                </select>
+        </div>
+        <div class="mb-3">
+                <label for="CONTRATO" class="form-label">Número de Contrato:</label>
+                <input type="text" class="form-control" id="CONTRATO" name="CONTRATO" required>
+        </div>
+            <!-- Widget de reCAPTCHA -->
+        <div class="mb-4 d-grid">
+                <div class="g-recaptcha" data-sitekey="{{ RECAPTCHA_PUBLIC_KEY }}"></div>
+        </div>
+            <div class="d-grid">
+                <button type="submit" class="btn btn-primary"><i class="fa-solid fa-magnifying-glass"> Consultar</i></button>
+            </div>
+        </form>
+    </div>
+
+</div>
+
+{% endblock content %}
+
+
+
